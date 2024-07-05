@@ -6,16 +6,17 @@ function Home() {
   const [items, setItems] = useState(null);
 
     useEffect(() => {
-      fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=45')
+      fetch('https://dummyjson.com/products?limit=0')
       .then(response => response.json())
-      .then(data => setItems(data))
+      .then(data => setItems(data.products))
     }, [])
+    console.log(items)
     return (
       <>
        <Layout>
         <div className="grid grid-cols-4 gap-y-4  gap-x-2 w-full max-w-screen-lg">
           {
-            items?.map(item => (
+            items?.map((item) => (
                <Card key={item.id} data={item}/>
             ))
           }
