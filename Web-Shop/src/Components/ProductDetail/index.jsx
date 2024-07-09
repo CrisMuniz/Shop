@@ -7,17 +7,21 @@ const ProductDetail = () => {
 
     const onCancel = () => {setOpenModal(false)};
     return (
-        <div>
-            <div>Detail</div>
-            <div onClick={onCancel}><XCircleIcon></XCircleIcon>
+        <div className="flex flex-col fixed bg-white rounded-lg w-[300px] h-[calc(100vh-130px)] overflow-hidden shadow-lg hover:shadow-xl 
+                    hover:scale-105 duration-500 transform transition">
+            <div className="flex justify-between items-center p-6">
+                <h2 className="font-medium text-xl">Product Detail</h2>
+                <div onClick={onCancel}><XCircleIcon className="h-6 w-6 text-black cursor-pointer"></XCircleIcon>
+                </div>
             </div>
-            <figure>
-                <img src="" alt="" />
+
+            <figure className="px-6">
+                <img className="w-full h-full rounded-lg" src={productShow.images[0]} alt={productShow.title} />
             </figure>
-            <div>
-                <h2>nombre producto</h2>
-                <p>precio</p>
-                <p>descripcion</p>
+            <div className="flex flex-col p-6">
+                <h3 className="font-medium text-md pb-2">{productShow.title}</h3>
+                <p className="font-medium text-xl pb-1">${productShow.price}</p>
+                <p className="font-light text-sm">{productShow.description}</p>
             </div>
         </div>
 
