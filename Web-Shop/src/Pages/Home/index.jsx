@@ -1,9 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Layout from "../../Components/Layout";
 import Card from "../../Components/Card";
+import Modal from "../../Components/Modal";
+import ProductDetail from "../../Components/ProductDetail";
+import { ShoppingCartContext } from "../../Context";
 
 function Home() {
   const [items, setItems] = useState(null);
+  const {openModal} = useContext(ShoppingCartContext);
 
     useEffect(() => {
       fetch('https://dummyjson.com/products?limit=0')
@@ -21,6 +25,11 @@ function Home() {
             ))
           }
         </div>
+        {openModal && (
+          <Modal>
+            <ProductDetail/>
+          </Modal>
+        )}
        </Layout>
       </>
     )
