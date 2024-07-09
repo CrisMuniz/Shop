@@ -7,11 +7,10 @@ const ProductDetail = () => {
 
     const onCancel = () => {setOpenModal(false)};
     return (
-        <div className="flex flex-col fixed bg-white rounded-lg w-[300px] h-[calc(100vh-130px)] overflow-hidden shadow-lg hover:shadow-xl 
-                    hover:scale-105 duration-500 transform transition">
-            <div className="flex justify-between items-center p-6">
+        <div className="flex flex-col fixed bg-white  rounded-lg w-[300px] h-[calc(100vh-130px)]  overflow-auto  shadow-lg hover:shadow-xl hover:scale-105 duration-500 transform transition scr">
+            <div className="flex justify-between items-center p-6 ">
                 <h2 className="font-medium text-xl">Product Detail</h2>
-                <div onClick={onCancel}><XCircleIcon className="h-6 w-6 text-black cursor-pointer"></XCircleIcon>
+                <div onClick={onCancel}><XCircleIcon className="h-6 w-6 cursor-pointer text-black"></XCircleIcon>
                 </div>
             </div>
 
